@@ -13,7 +13,6 @@ let adjectivesButton = document.querySelector('#button3');
 let nouns2Button = document.querySelector('#button4');
 let placesButton = document.querySelector('#button5');
 let surprisesButton = document.querySelector('#surprises');
-let playbackButton = document.querySelector('#playback');
 let resetButton = document.querySelector('#reset');
 
 //All of the arrays which can be used to make the toy.
@@ -22,7 +21,6 @@ let verbsArray = ["Sat on","ate","Danced with", "saw", "doesn't like","kissed"];
 let adjectivesArray = ["A funnny","A scary","A goofy", "A slimy", "A barking", "A fat"];
 let nouns2Array = ["Goat", "Monkey", "Fish", "Cow", "Frog","Bug","Worm"];
 let placesArray = ["on the moon", "on the chair","in my spaghetti", "in my soup", "on the grass","in my shoes"];
-
 
 /* Functions
 -------------------------------------------------- */
@@ -33,12 +31,12 @@ function creatingSurpriseSentence(){
 	let nouns2 = randomWordInArray(nouns2Array);
 	let places = randomWordInArray(placesArray);
 
-	//Constructing the surprise Sentence 
+//Constructing the surprise Sentence 
 	let surpriseSentence = nouns1+ " "+verbs+" "+adjectives+" "+nouns2+" "+ places;
 	speakNow(surpriseSentence);
 }
 function resetSentence(){
-	playbackSentence = "";
+	surpriseSentence = "";
 }
 function randomWordInArray(array){
 	return array[Math.floor(Math.random()*array.length)];
@@ -49,6 +47,7 @@ function speakNow(string) {
 	// Actually speak the text
 	synth.speak(utterThis);
 }
+
 
 /* Event Listeners
 -------------------------------------------------- */
